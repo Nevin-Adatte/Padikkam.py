@@ -3,9 +3,11 @@ Number Guessing Game
 
 Rules 📜
 
-Guess the correct number in between 1-99
-5 chances are given
-Hints are provided
+1. Guess the correct number in between 1-99
+
+2. 5 chances are given
+
+3. Hints are provided
 
 >Run using this command
 ```
