@@ -1,13 +1,12 @@
 # Number Guessing Game
-Number Guessing Game
 
-Rules 📜
+## Rules 📜
 
-1. Guess the correct number in between 1-99
+**1.**  Guess the correct number in between 1-99
 
-2. 5 chances are given
+**2.**  5 chances are given
 
-3. Hints are provided
+**3.**  Hints are provided
 
 >Run using this command
 ```
