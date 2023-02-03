@@ -2,5 +2,5 @@
 
 >Run using this command
 ```
-python dice.py
+python qr.py
 ```
