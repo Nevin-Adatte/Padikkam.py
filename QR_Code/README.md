@@ -1,6 +1,6 @@
 # QR Code Generator
 
-##Simple QR Code Generating Program
+## Simple QR Code Generating Program
 
 >Install the require library
 ```
