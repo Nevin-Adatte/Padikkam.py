@@ -3,10 +3,18 @@
 
 This is a simple program to generate invoice
 
+>Required library for the execution
+
+```
+
+pip install reportlab
+
+```
+
 >Run using this command
 
 ```
 
-python invoice.py
+py invoice.py
 
 ```
