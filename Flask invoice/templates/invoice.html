@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div>
+        <h2>Invoice</h2>
+        <form method="post" action="/details">
+          <input type="text" id="invoice_number" name="invoice_number" placeholder="Enter invoice number" required>
+
+          <input type="text" id="customer_name" name="customer_name" placeholder="Enter customer name" required>
+
+          <input type="text" id="num_items" name="num_items" placeholder="Enter number of items" required>
+
+          <input type="submit" value="Continue">
+
+          <a href="{{ url_for('sign') }}">Back to Login</a>
+        </form>
+      </div>
+</body>
+</html>

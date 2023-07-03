@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div>
+        <h2>Invoice</h2>
+        <form method="post" action="/process">
+
+          {{ for num in range(num_items)}}
+            <input type="text" id="item_name" name="item_name" placeholder="Enter name of item {{ num+1 }}" required>
+
+            <input type="text" id="item_price" name="item_price" placeholder="Enter price of item {{ num +1 }}" required>
+          {{ endfor }}
+          <input type="submit" value="Generate Invoice">
+
+          <a href="{{ url_for('sign') }}">Back</a>
+        </form>
+      </div>
+</body>
+</html>
