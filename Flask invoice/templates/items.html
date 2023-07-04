@@ -12,11 +12,11 @@
         <h2>Invoice</h2>
         <form method="post" action="/process">
 
-          {{ for num in range(num_items)}}
-            <input type="text" id="item_name" name="item_name" placeholder="Enter name of item {{ num+1 }}" required>
+          {% for num in range(num_items) %}
+            <input type="text" id="item_name_{{ num+1 }}" name="item_name" placeholder="Enter name of item {{ num+1 }}" required>
 
-            <input type="text" id="item_price" name="item_price" placeholder="Enter price of item {{ num +1 }}" required>
-          {{ endfor }}
+            <input type="text" id="item_price_{{ num+1 }}" name="item_price" placeholder="Enter price of item {{ num +1 }}" required>
+          {% endfor %}
           <input type="submit" value="Generate Invoice">
 
           <a href="{{ url_for('sign') }}">Back</a>
