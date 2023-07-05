@@ -15,6 +15,6 @@ pip install reportlab
 
 ```
 
-py invoice.py
+py app.py
 
 ```
