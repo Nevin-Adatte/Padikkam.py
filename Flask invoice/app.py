@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
 from reportlab.pdfgen import canvas
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://scott:tiger@localhost/project'
@@ -41,11 +42,23 @@ def process():
     items = []
     for i in range(num_items):
         item_name = request.form.get('item_name_' + str(i+1))
-        price = request.form.get('item_price_' + str(i+1))
+        # price = int(request.form.get('item_price_' + str(i+1)))
+        price_str = request.form.get('item_price_' + str(i+1))
+        price = int(price_str) if price_str is not None else 0
+
         items.append((item_name, price))
 
+    # Get the current working directory
+    current_dir = os.getcwd()
+
+    # Specify the save location
+    save_path = os.path.join(current_dir, "Flask invoice//invoice.pdf")
+
     # Create a new PDF object
-    pdf = canvas.Canvas("invoice.pdf", pagesize=letter)
+    pdf = canvas.Canvas(save_path, pagesize=letter)
+
+    # # Create a new PDF object
+    # pdf = canvas.Canvas("invoice.pdf", pagesize=letter)
 
     # Draw the title of the invoice
     pdf.setFont("Helvetica-Bold", 24)
@@ -83,7 +96,7 @@ def process():
     # Save the PDF file
     pdf.save()
 
-    return send_file("output.pdf", as_attachment=True)
+    return send_file("invoice.pdf", as_attachment=True)
     # # return render_template('invoice.html', name=name)
 
 if __name__ == '__main__':
