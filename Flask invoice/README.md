@@ -13,6 +13,10 @@ pip install reportlab
 ```
 pip install flask
 ```
+>Install SQL 
+```
+flask_sqlalchemy
+```
 >Run using this command
 
 ```
